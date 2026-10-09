@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Um Espaço Seguro — arte, música e apoio para a saúde mental de jovens e adolescentes.">
+  <title>Um Espaço Seguro | Arte, Música & Esperança</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --ink:#142326; --cream:#fffaf0; --paper:#f5efe3; --purple:#7354d8;
+      --purple2:#9a7df0; --mint:#bfe9df; --yellow:#ffe58a; --coral:#ff9b78;
+      --white:#fff; --muted:#5d6a6c; --radius:26px; --shadow:0 18px 55px rgba(20,35,38,.12);
+    }
+    *{box-sizing:border-box;scroll-behavior:smooth}
+    body{margin:0;color:var(--ink);background:var(--cream);font-family:"DM Sans",system-ui,sans-serif;line-height:1.6}
+    a{text-decoration:none;color:inherit}
+    .nav{position:fixed;z-index:20;top:0;left:0;right:0;background:rgba(10,20,21,.94);backdrop-filter:blur(12px);color:#fff}
+    .navin{max-width:1180px;margin:auto;padding:14px 22px;display:flex;align-items:center;gap:26px}
+    .logo{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.05em;margin-right:auto}
+    .logo-mark{width:42px;height:42px;border:2px solid #fff;border-radius:50% 50% 45% 45%;display:grid;place-items:center;font-size:21px}
+    .navlinks{display:flex;gap:22px;font-size:13px;font-weight:600}
+    .navlinks a:hover{color:var(--yellow)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 20px;border-radius:999px;font-weight:700;border:0;cursor:pointer;transition:.2s}
+    .btn:hover{transform:translateY(-2px)}
+    .btn-primary{background:var(--purple);color:#fff;box-shadow:0 10px 25px rgba(115,84,216,.25)}
+    .btn-light{background:#fff;color:var(--ink)}
+    .hero{min-height:760px;padding:130px 22px 70px;position:relative;overflow:hidden;background:
+      radial-gradient(circle at 80% 20%,rgba(255,229,138,.7),transparent 25%),
+      linear-gradient(135deg,#183335 0%,#264b4a 47%,#f0b67d 100%);color:#fff}
+    .hero:before,.hero:after{content:"";position:absolute;border-radius:45%;filter:blur(1px);opacity:.9}
+    .hero:before{width:360px;height:180px;background:var(--mint);right:-90px;top:95px;transform:rotate(-12deg)}
+    .hero:after{width:420px;height:170px;background:var(--coral);left:-130px;bottom:20px;transform:rotate(8deg)}
+    .hero-grid{max-width:1180px;margin:auto;display:grid;grid-template-columns:1.05fr .95fr;gap:55px;align-items:center;position:relative;z-index:2}
+    .eyebrow{font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--yellow)}
+    h1,h2,.script{font-family:Kalam,cursive}
+    h1{font-size:clamp(55px,7vw,92px);line-height:.92;margin:12px 0 24px;letter-spacing:-.03em}
+    .hero p{font-size:19px;max-width:590px;color:#eef7f5}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+    .hero-card{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);border-radius:32px;padding:18px;backdrop-filter:blur(8px)}
+    .hero-art{min-height:470px;border-radius:28px;background:url("assets/galeria/encontro-criativo.jpg") center 40%/cover no-repeat;box-shadow:var(--shadow);border:5px solid rgba(255,255,255,.7)}
+    .gallery{background:#f5efe3}.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.gallery-card{margin:0;background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 12px 30px rgba(20,35,38,.08);transition:transform .25s}.gallery-card:hover{transform:translateY(-5px)}.gallery-card img{display:block;width:100%;height:260px;object-fit:cover}.gallery-card figcaption{padding:16px 18px;font-weight:700}.gallery-card figcaption span{display:block;font-size:13px;font-weight:400;color:var(--muted);margin-top:3px}.gallery-note{font-size:13px;color:var(--muted);margin-top:22px}
+    .activity{background-size:cover;background-position:center}.activity:before{background:linear-gradient(transparent 10%,rgba(0,0,0,.78))}.a1{background-image:url("assets/galeria/pintura-coletiva.jpg")} .a2{background-image:url("assets/galeria/arte-e-expressao.jpg")} .a3{background-image:url("assets/galeria/musica-e-talento.jpg")} .a4{background-image:url("assets/galeria/conversa-e-partilha.jpg")}
+    section{padding:92px 22px}
+    .wrap{max-width:1180px;margin:auto}
+    .section-head{max-width:760px;margin-bottom:44px}
+    .section-head h2{font-size:52px;line-height:1;margin:8px 0 16px}
+    .section-head p{color:var(--muted);font-size:17px}
+    .mission{background:var(--cream)}
+    .mission-grid{display:grid;grid-template-columns:1fr 1.25fr;gap:55px;align-items:start}
+    .mission-copy{font-size:18px}
+    .quote{margin-top:25px;padding:24px;border-left:5px solid var(--purple);background:#fff;border-radius:0 20px 20px 0;font-family:Kalam;font-size:24px}
+    .pillars{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    .pillar{padding:25px;border-radius:24px;background:#fff;box-shadow:0 8px 30px rgba(20,35,38,.06)}
+    .icon{width:54px;height:54px;border-radius:50%;display:grid;place-items:center;font-size:27px;margin-bottom:14px}
+    .mint{background:var(--mint)} .yellow{background:var(--yellow)} .pink{background:#ead9f5} .peach{background:#ffd4c4}
+    .pillar h3{margin:0 0 6px;font-size:19px}.pillar p{margin:0;color:var(--muted)}
+    .dark{background:#132325;color:#fff}
+    .dark .section-head p{color:#c7d3d3}
+    .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .step{min-height:270px;padding:25px;border-radius:24px;background:#20383a;border:1px solid rgba(255,255,255,.08)}
+    .num{font-family:Kalam;font-size:48px;color:var(--yellow)}
+    .step h3{font-size:20px}.step p{color:#c8d5d5}
+    .activities{background:#fff}
+    .activity-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .activity{min-height:300px;border-radius:26px;padding:26px;display:flex;flex-direction:column;justify-content:end;overflow:hidden;position:relative}
+    .activity:before{content:"";position:absolute;inset:0;background:linear-gradient(transparent 20%,rgba(0,0,0,.75))}
+    .activity > *{position:relative;z-index:1;color:#fff}
+    .a1{background:linear-gradient(135deg,#a64c52,#f0b16f)} .a2{background:linear-gradient(135deg,#246b68,#b7e4d9)}
+    .a3{background:linear-gradient(135deg,#59428e,#d69acb)} .a4{background:linear-gradient(135deg,#1c3032,#8d7a61)}
+    .support{background:var(--paper)}
+    .support-box{background:#fff;border-radius:32px;padding:45px;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;box-shadow:var(--shadow)}
+    .support-box h2{font-size:48px;line-height:1;margin:0 0 16px}
+    .check{display:flex;gap:12px;margin:14px 0}.check b{color:var(--purple)}
+    .contact{background:#e8f3ef}
+    form{display:grid;gap:13px}
+    input,textarea,select{width:100%;padding:15px 17px;border:1px solid #d7dfdc;border-radius:15px;background:#fff;font:inherit;color:var(--ink)}
+    textarea{min-height:140px;resize:vertical}
+    footer{background:#0c191a;color:#dbe7e5;padding:45px 22px}
+    .footer-grid{max-width:1180px;margin:auto;display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:35px}
+    footer h3{color:#fff}.footer-links{display:grid;gap:8px;font-size:14px;color:#aebfbd}
+    .tiny{font-size:13px;color:#8fa3a1}
+    .mobile{display:none}
+    @media(max-width:900px){
+      .navlinks{display:none}.mobile{display:block}
+      .hero-grid,.mission-grid,.support-box{grid-template-columns:1fr}
+      .hero{min-height:auto}.hero-art{min-height:350px}
+      .steps,.activity-grid{grid-template-columns:repeat(2,1fr)}.gallery-grid{grid-template-columns:repeat(2,1fr)}
+      .footer-grid{grid-template-columns:1fr 1fr}
+    }
+    @media(max-width:560px){
+      .navin{padding:11px 15px}.logo{font-size:12px}.logo-mark{width:36px;height:36px}
+      section{padding:65px 18px}.hero{padding:105px 18px 55px}
+      h1{font-size:55px}.section-head h2{font-size:42px}
+      .pillars,.steps,.activity-grid,.footer-grid,.gallery-grid{grid-template-columns:1fr}.gallery-card img{height:240px}
+      .support-box{padding:28px}.hero-art{min-height:260px}
+    }
+  </style>
+</head>
+<body>
+<nav class="nav">
+  <div class="navin">
+    <a class="logo" href="#inicio"><span class="logo-mark">♡</span><span>UM ESPAÇO SEGURO</span></a>
+    <div class="navlinks">
+      <a href="#sobre">Sobre nós</a><a href="#como">Como funciona</a><a href="#atividades">Atividades</a><a href="#galeria">Os nossos trabalhos</a>
+      <a href="#apoio">Apoio psicológico</a><a href="#junte">Junte-se</a><a href="#contacto">Contacto</a>
+    </div>
+    <a class="btn btn-primary" href="#junte">Junta-te a nós</a>
+  </div>
+</nav>
+
+<header class="hero" id="inicio">
+  <div class="hero-grid">
+    <div>
+      <div class="eyebrow">Arte • Música • Apoio • Jovens</div>
+      <h1>Um espaço para respirar, criar e ser.</h1>
+      <p>Uma fundação sem fins lucrativos que cria encontros seguros para jovens e adolescentes expressarem o que sentem através da arte, da música e, quando quiserem, do apoio de psicólogos voluntários.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#como">Descobre como funciona →</a>
+        <a class="btn btn-light" href="#junte">Quero ajudar</a>
+      </div>
+    </div>
+    <div class="hero-card"><div class="hero-art" aria-label="Imagem conceptual da comunidade"></div></div>
+  </div>
+</header>
+
+<section class="mission" id="sobre">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow" style="color:#7354d8">A nossa missão</div>
+      <h2>Ninguém deveria carregar tudo sozinho.</h2>
+      <p>Queremos transformar momentos de isolamento em momentos de conexão. Aqui, um sentimento pode virar uma pintura, uma camisa, uma letra ou uma música.</p>
+    </div>
+    <div class="mission-grid">
+      <div class="mission-copy">
+        <p><strong>Um Espaço Seguro</strong> nasceu para ajudar jovens e adolescentes a encontrarem formas saudáveis de expressão e a perceberem que não estão sozinhos.</p>
+        <p>A cada duas semanas, criamos um ambiente acolhedor, sem julgamentos e sem pressão para falar. Cada pessoa decide o que quer partilhar e até onde quer ir.</p>
+        <div class="quote">“A tua história também importa.”</div>
+      </div>
+      <div class="pillars">
+        <article class="pillar"><div class="icon mint">🎨</div><h3>Arte</h3><p>Telas brancas para pintar o que se sente, sem regras e sem julgamentos.</p></article>
+        <article class="pillar"><div class="icon yellow">👕</div><h3>Expressão</h3><p>Camisas brancas para cada jovem transformar em uma extensão da sua identidade.</p></article>
+        <article class="pillar"><div class="icon pink">🎵</div><h3>Música</h3><p>Instrumentos, aprendizagem e criação coletiva para encontrar novas formas de expressão.</p></article>
+        <article class="pillar"><div class="icon peach">🧠</div><h3>Apoio psicológico</h3><p>Psicólogos voluntários disponíveis para conversar com quem se sentir confortável.</p></article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dark" id="como">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">De duas em duas semanas</div>
+      <h2>Um encontro. Várias formas de te expressar.</h2>
+      <p>Não precisas saber pintar. Não precisas saber tocar. Não precisas explicar tudo. Só precisas de um espaço onde possas começar.</p>
+    </div>
+    <div class="steps">
+      <article class="step"><div class="num">01</div><h3>Chega como és</h3><p>Entra num ambiente acolhedor onde ninguém é obrigado a contar aquilo que ainda não está preparado para contar.</p></article>
+      <article class="step"><div class="num">02</div><h3>Cria</h3><p>Pinta, personaliza uma camisa, experimenta um instrumento ou simplesmente observa e participa no teu ritmo.</p></article>
+      <article class="step"><div class="num">03</div><h3>Conecta</h3><p>Conhece outras pessoas, partilha experiências e descobre que existem histórias parecidas com a tua.</p></article>
+      <article class="step"><div class="num">04</div><h3>Se quiseres, conversa</h3><p>Quem se sentir confortável pode procurar um psicólogo voluntário para uma conversa privada e acolhedora.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="activities" id="atividades">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow" style="color:#7354d8">O que fazemos</div>
+      <h2>Transformamos sentimentos em criação.</h2>
+    </div>
+    <div class="activity-grid">
+      <article class="activity a1"><h3>🎨 Telas brancas</h3><p>Pinta o que sentes. A tua arte não precisa de tradução.</p></article>
+      <article class="activity a2"><h3>👕 Camisas personalizadas</h3><p>Cria algo que represente quem és.</p></article>
+      <article class="activity a3"><h3>🎸 Música em conjunto</h3><p>Aprende, experimenta e cria uma música com a comunidade.</p></article>
+      <article class="activity a4"><h3>💬 Conversas</h3><p>Quando estiveres pronto, existem pessoas disponíveis para ouvir.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="gallery" id="galeria">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow" style="color:#7354d8">Momentos reais</div>
+      <h2>O nosso trabalho, contado em imagens.</h2>
+      <p>Dos encontros criativos à arte feita em conjunto, cada fotografia mostra um pouco da comunidade que estamos a construir.</p>
+    </div>
+    <div class="gallery-grid">
+      <figure class="gallery-card"><img src="assets/galeria/encontro-criativo.jpg" alt="Jovens reunidos numa atividade criativa" loading="lazy"><figcaption>Encontros criativos<span>Um espaço para participar e criar em conjunto.</span></figcaption></figure>
+      <figure class="gallery-card"><img src="assets/galeria/mural-comunidade.jpg" alt="Mural colorido criado no espaço comunitário" loading="lazy"><figcaption>Arte que transforma espaços<span>Cor, identidade e expressão na comunidade.</span></figcaption></figure>
+      <figure class="gallery-card"><img src="assets/galeria/pintura-coletiva.jpg" alt="Participantes a colaborar numa atividade artística" loading="lazy"><figcaption>Criar lado a lado<span>Ideias diferentes, uma experiência partilhada.</span></figcaption></figure>
+      <figure class="gallery-card"><img src="assets/galeria/encontro-comunidade.jpg" alt="Participantes num encontro comunitário" loading="lazy"><figcaption>Uma comunidade presente<span>Encontros que aproximam pessoas.</span></figcaption></figure>
+      <figure class="gallery-card"><img src="assets/galeria/equipa-e-parceiros.jpg" alt="Equipa e parceiros reunidos" loading="lazy"><figcaption>Juntos fazemos acontecer<span>Colaboração para criar oportunidades.</span></figcaption></figure>
+      <figure class="gallery-card"><img src="assets/galeria/arte-e-expressao.jpg" alt="Atividade de expressão artística" loading="lazy"><figcaption>Expressão sem julgamentos<span>Cada pessoa encontra a sua própria forma de se expressar.</span></figcaption></figure>
+      <figure class="gallery-card"><img src="assets/galeria/oficina-artistica.jpg" alt="Oficina de arte e criação" loading="lazy"><figcaption>Oficinas artísticas<span>Experimentar, aprender e descobrir talentos.</span></figcaption></figure>
+      <figure class="gallery-card"><img src="assets/galeria/conversa-e-partilha.jpg" alt="Participantes reunidos para partilhar experiências" loading="lazy"><figcaption>Escuta e partilha<span>Há espaço para falar, ouvir ou simplesmente estar.</span></figcaption></figure>
+      <figure class="gallery-card"><img src="assets/galeria/musica-e-talento.jpg" alt="Momento de apresentação e expressão musical" loading="lazy"><figcaption>Talento e criatividade<span>Celebramos diferentes formas de expressão.</span></figcaption></figure>
+    </div>
+    <p class="gallery-note">As fotografias devem ser publicadas apenas com as autorizações necessárias, especialmente quando identificam menores.</p>
+  </div>
+</section>
+
+<section class="support" id="apoio">
+  <div class="wrap">
+    <div class="support-box">
+      <div>
+        <div class="eyebrow" style="color:#7354d8">Apoio psicológico</div>
+        <h2>Falar também é uma forma de cuidar.</h2>
+        <p>O nosso espaço inclui psicólogos voluntários para jovens que desejem conversar. O acompanhamento é voluntário e respeita o ritmo e os limites de cada participante.</p>
+        <div class="check"><b>✓</b><span>Escuta sem julgamentos</span></div>
+        <div class="check"><b>✓</b><span>Respeito pela privacidade e pelos limites pessoais</span></div>
+        <div class="check"><b>✓</b><span>Possibilidade de encaminhamento para apoio profissional adequado quando necessário</span></div>
+      </div>
+      <div style="background:#f1ebff;border-radius:24px;padding:30px;align-self:center">
+        <h3>Não precisas de explicar tudo.</h3>
+        <p>Às vezes, o primeiro passo é simplesmente dizer: “preciso de conversar”.</p>
+        <a class="btn btn-primary" href="#contacto">Quero saber mais</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dark" id="junte">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Junta-te à mudança</div>
+      <h2>Voluntários, parceiros e apoiantes fazem a diferença.</h2>
+      <p>O nosso impacto cresce quando pessoas e organizações acreditam na importância de criar espaços seguros para os jovens.</p>
+    </div>
+    <div class="hero-actions">
+      <a class="btn btn-light" href="#contacto">Quero ser voluntário</a>
+      <a class="btn btn-primary" href="#contacto">Quero apoiar</a>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contacto">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow" style="color:#7354d8">Fala connosco</div>
+      <h2>Vamos criar este espaço juntos.</h2>
+      <p>Este formulário é uma demonstração. Liga-o ao teu e-mail ou serviço de formulários quando o site for publicado.</p>
+    </div>
+    <form onsubmit="event.preventDefault(); alert('Obrigado pela mensagem! O formulário está pronto para ser ligado ao vosso e-mail.');">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:13px">
+        <input required placeholder="O teu nome">
+        <input type="email" required placeholder="O teu e-mail">
+      </div>
+      <select><option>Quero...</option><option>Ser voluntário</option><option>Apoiar / fazer uma doação</option><option>Ser parceiro</option><option>Saber mais sobre os encontros</option></select>
+      <textarea placeholder="Escreve a tua mensagem"></textarea>
+      <button class="btn btn-primary" type="submit">Enviar mensagem →</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div><h3>♡ UM ESPAÇO SEGURO</h3><p class="tiny">Jovens + Arte + Música = Esperança.</p></div>
+    <div><h3>Explorar</h3><div class="footer-links"><a href="#sobre">Sobre nós</a><a href="#como">Como funciona</a><a href="#atividades">Atividades</a><a href="#galeria">Os nossos trabalhos</a></div></div>
+    <div><h3>Apoiar</h3><div class="footer-links"><a href="#junte">Voluntariado</a><a href="#junte">Parcerias</a><a href="#contacto">Contacto</a></div></div>
+    <div><h3>Contacto</h3><div class="footer-links"><span>Maputo, Moçambique</span><span>Em breve: e-mail e redes sociais</span></div></div>
+  </div>
+  <div class="wrap tiny" style="margin-top:35px;border-top:1px solid #263738;padding-top:18px">© 2026 Um Espaço Seguro. Fundação sem fins lucrativos.</div>
+</footer>
+</body>
+</html>
